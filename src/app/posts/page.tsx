@@ -18,7 +18,7 @@ export default async function Page() {
                         {/* <a href={`/posts/${post.id}`} className="text-blue-500 hover:underline">
                             {post.title}
                         </a> */}
-                        <Link href={`/posts/${post.id}`}>{post.title}</Link>
+                        <Link href={`/posts/${post.id}`} className="text-blue-500 hover:underline">{post.title}</Link>
                     </li>
                 ))}
             </ul>
