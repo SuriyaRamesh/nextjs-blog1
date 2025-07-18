@@ -10,7 +10,7 @@ export default async function Page({ params } : {params: Promise<{id: string}>})
     const data = await fetch(`https://dummyjson.com/posts/${id}`);
     const post = await data.json();
 
-    if(!post) {
+    if(!post.title && !post.body) {
         return notFound();
     }
 
