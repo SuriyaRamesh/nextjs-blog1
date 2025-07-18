@@ -24,7 +24,19 @@ export default async function Page() {
             </ul>
 
             {/* Form to submit a post - Post method */}
-            <form className="max-w-[400px] mx-auto mt-24 mb-10">
+            {/* Tradition way of adding a post */}
+            <form onSubmit={() => {
+                fetch('/api/posts',{
+                    method: 'POST',
+                    body: JSON.stringify({
+                        title: 'New Post',
+                        content: 'This is the content of the new post.'
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                } )
+            }} className="max-w-[400px] mx-auto mt-24 mb-10">
                 <input type="text" placeholder="Title" className="border p-2 mb-2 w-full" />
                 <textarea placeholder="Content" className="border p-2 mb-2 w-full"></textarea>
                 <button type="submit" className="bg-blue-500 text-white px-3 py-1 rounded-md">Create post</button>
