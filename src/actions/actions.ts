@@ -11,5 +11,5 @@ import { revalidatePath } from "next/cache";
 //     await Prisma.post.create({data: { title, content}})
 
         // powerful feature of server actions (without reloading the page we can see the updated data)
-        revalidatePath("/posts");
+        revalidatePath("/posts");  // triggers rerender of that particular route
 // }
