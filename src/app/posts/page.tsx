@@ -53,3 +53,8 @@ export default async function Page() {
         </div>
     )
 }
+
+
+// Authentication - we are gonna check whether the user is having the valid JSON Web Token (JWT) in their browser cookies
+// Authorization - we are gonna check whether the user is having the valid role to access the resource
+// Authorization is done by checking the user role in the JWT
