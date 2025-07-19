@@ -1,5 +1,6 @@
 // import { prisma } from "@/lib/db"; // Import your Prisma client
 
+import UpvoteBtn from "@/components/upvote-btn";
 import { notFound } from "next/navigation";
 
 export default async function Page({ params } : {params: Promise<{id: string}>}) { 
@@ -25,6 +26,9 @@ export default async function Page({ params } : {params: Promise<{id: string}>})
         <div className="text-center pt-12">
             <h1 className="text-3xl capitalize font-bold mb-4">{post.title}</h1>
             <p className="whitespace-pre-wrap">{post.body}</p>
+
+            {/* eg btn with user events to understand client components */}
+            <UpvoteBtn />
         </div>
     );
 }
