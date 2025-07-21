@@ -14,3 +14,9 @@ export default function Home() {
 }
 
 // after proper login the user will be having the access token (JWT) in the browser cookies
+
+
+
+// 1. Client - client components - these are the components that run in the browser
+// 2. Middleware - we can run something before we do other things
+// 3. Server - server components - these are the components that run on the server (server components, server actions, route handlers(API)))

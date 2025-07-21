@@ -1,9 +1,15 @@
 // import { prisma } from "@/lib/db"; // Import your Prisma client
 
 import UpvoteBtn from "@/components/upvote-btn";
-import { notFound } from "next/navigation";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { notFound, redirect } from "next/navigation";
 
 export default async function Page({ params } : {params: Promise<{id: string}>}) { 
+    const { isAuthenticated } = getKindeServerSession();
+
+    if(!(await isAuthenticated())) {
+       return redirect("/api/auth/login");
+    }
 
     const id = (await params).id;
 
