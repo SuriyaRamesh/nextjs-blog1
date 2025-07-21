@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 
 export default function Header() {
     return (
@@ -7,6 +8,11 @@ export default function Header() {
             <Link href="/">
                 <Image src="/logo.png" alt="Logo" width="40" height="40" />
             </Link>
+
+            <LogoutLink className="bg-red-500 text-white px-4 py-2 rounded-md">
+                Logout
+            </LogoutLink>
+            
             <ul className="flex items-center gap-3">
                 <li>
                     <Link href="/">
