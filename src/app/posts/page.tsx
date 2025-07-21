@@ -1,5 +1,6 @@
 // import { createPost } from "@/actions/actions";
 import Link from "next/link";
+import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
 
 export default async function Page() {
     // Fetching data from an external API
@@ -13,6 +14,8 @@ export default async function Page() {
     return (
         <div className="text-center pt-12">
             <h1 className="text-3xl capitalize font-bold mb-4">Posts</h1>
+            <LoginLink>Sign in</LoginLink>
+            <RegisterLink>Sign up</RegisterLink>
             <ul>
                 {data.posts.map((post: {id: number, title: string}) => (
                     <li key={post.id} className="mb-2">
