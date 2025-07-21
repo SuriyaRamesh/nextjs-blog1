@@ -1,7 +1,18 @@
 // import { createPost } from "@/actions/actions";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from "next/link";
+import { redirect } from "next/navigation";
+
 
 export default async function Page() {
+    // checking if the user has valid JWT in their browser cookies
+    // if not, redirecting them to the login page
+    const { isAuthenticated } = getKindeServerSession();
+
+    if(!(await isAuthenticated())) {
+       return redirect("/api/auth/login");
+    }
+
     // Fetching data from an external API
     const response = await fetch("https://dummyjson.com/posts");
     const data = await response.json();
